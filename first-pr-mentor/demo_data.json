@@ -1,0 +1,151 @@
+{
+  "_note": "Fictional sample data used by Demo mode. No network calls are made.",
+  "owner": "demo-org",
+  "repo": "todo-cli",
+  "number": 42,
+  "default_branch": "main",
+  "demo": true,
+  "has_contributing": true,
+  "issue": {
+    "number": 42,
+    "title": "Add a --version flag to the CLI",
+    "html_url": "https://github.com/demo-org/todo-cli/issues/42",
+    "labels": [
+      "good first issue",
+      "enhancement"
+    ],
+    "body": "Running `todo --version` currently prints an error. It should print the installed version, for example `todo-cli 0.3.1`.\n\nThe version number already lives in `todo/__init__.py` as `__version__`.",
+    "comments": [
+      {
+        "author": "maintainer-jo",
+        "body": "Good first issue! argparse has a built-in 'version' action that does most of the work."
+      }
+    ]
+  },
+  "repo_info": {
+    "description": "A tiny command line to-do list manager",
+    "language": "Python",
+    "default_branch": "main",
+    "stars": 128
+  },
+  "explanation": {
+    "simple_explanation": "The command line tool has no way to tell you which version is installed. Typing `todo --version` should print the version number, but right now it shows an error. The version number is already stored in the code, so you only need to connect it to the command.",
+    "what_success_looks_like": "Running `todo --version` prints `todo-cli 0.3.1` (using the real version) and exits without an error.",
+    "difficulty": 2,
+    "estimated_minutes": 30,
+    "beginner_friendly_score": 9
+  },
+  "files": [
+    {
+      "path": "todo/cli.py",
+      "reason": "This is where the command line options are defined, so the new flag belongs here.",
+      "what_to_look_for": "Find where argparse.ArgumentParser is created and where options are added with add_argument."
+    },
+    {
+      "path": "todo/__init__.py",
+      "reason": "It stores the version number you need to print.",
+      "what_to_look_for": "Look for the __version__ variable."
+    },
+    {
+      "path": "tests/test_cli.py",
+      "reason": "Existing tests for the CLI show how to write a small test for your flag.",
+      "what_to_look_for": "Copy the style of an existing test and check that the output contains the version."
+    }
+  ],
+  "contributing_summary": {
+    "bullets": [
+      "Fork the repo and work on a new branch, not on main.",
+      "Keep each pull request small and focused on one issue.",
+      "Run `pytest` and make sure all tests pass.",
+      "Follow PEP 8 style (run `ruff check .`).",
+      "Write a clear PR description and link the issue with 'Closes #<number>'."
+    ],
+    "must_do_before_pr": [
+      "Run pytest locally",
+      "Run ruff check .",
+      "Add or update a test for your change"
+    ]
+  },
+  "pr_draft": {
+    "title": "Add --version flag to the CLI",
+    "description": "## What I changed\n- Added a `--version` option in `todo/cli.py` that prints the value of `__version__`.\n- Added a test in `tests/test_cli.py`.\n\n## Why\nUsers had no way to check which version of todo-cli is installed.\n\n## How I tested\n- Ran `pytest` and all tests pass.\n- Ran `todo --version` and saw `todo-cli 0.3.1`.\n\nCloses #42"
+  },
+  "steps": [
+    {
+      "title": "Fork the repository",
+      "explanation": "A fork is your own copy of the project on GitHub, where you're allowed to make changes.",
+      "command": null,
+      "link": "https://github.com/demo-org/todo-cli/fork",
+      "link_label": "Open the fork page"
+    },
+    {
+      "title": "Clone your fork",
+      "explanation": "This downloads your copy to your computer; the last line links the original project as 'upstream'.",
+      "command": "git clone https://github.com/{username}/todo-cli.git\ncd todo-cli\ngit remote add upstream https://github.com/demo-org/todo-cli.git"
+    },
+    {
+      "title": "Create a branch",
+      "explanation": "A branch keeps your work separate from the main code, so mistakes are easy to undo.",
+      "command": "git checkout -b fix-issue-42-add-a-version-flag"
+    },
+    {
+      "title": "Make the change",
+      "explanation": "Open the files from the 'Where to look' card, make the smallest change that solves the issue, and save.",
+      "command": null
+    },
+    {
+      "title": "Run the tests (if the project has any)",
+      "explanation": "Tests check that nothing broke; use the test command from the repo rules, or skip if there are none.",
+      "command": null
+    },
+    {
+      "title": "Commit your change",
+      "explanation": "A commit saves a snapshot of your work with a short message describing it.",
+      "command": "git add .\ngit commit -m \"Fix #42: Add a --version flag to the CLI\""
+    },
+    {
+      "title": "Push your branch",
+      "explanation": "This uploads your branch to your fork on GitHub.",
+      "command": "git push origin fix-issue-42-add-a-version-flag"
+    },
+    {
+      "title": "Open the pull request",
+      "explanation": "A pull request asks the maintainers to review your change. Paste the draft below into the form.",
+      "command": null,
+      "link": "https://github.com/demo-org/todo-cli/compare/main...{username}:fix-issue-42-add-a-version-flag?expand=1",
+      "link_label": "Open the pull request page"
+    }
+  ],
+  "search_results": [
+    {
+      "title": "Add a --version flag to the CLI",
+      "url": "https://github.com/demo-org/todo-cli/issues/42",
+      "repo": "demo-org/todo-cli",
+      "language": "Python",
+      "stars": 128,
+      "comments": 1,
+      "age_days": 3,
+      "score": 91
+    },
+    {
+      "title": "Fix typo in installation docs",
+      "url": "https://github.com/demo-org/weather-bot/issues/17",
+      "repo": "demo-org/weather-bot",
+      "language": "Python",
+      "stars": 640,
+      "comments": 0,
+      "age_days": 9,
+      "score": 84
+    },
+    {
+      "title": "Add dark mode toggle to settings page",
+      "url": "https://github.com/demo-org/notes-web/issues/88",
+      "repo": "demo-org/notes-web",
+      "language": "JavaScript",
+      "stars": 2100,
+      "comments": 4,
+      "age_days": 21,
+      "score": 72
+    }
+  ]
+}
